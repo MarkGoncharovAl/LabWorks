@@ -1,0 +1,154 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[english,russian]{babel}
+\usepackage{fontspec}     
+\defaultfontfeatures{Ligatures={TeX},Renderer=Basic} 
+\setmainfont[Ligatures={TeX,Historic}]{Times New Roman}
+\setsansfont{Comic Sans MS}     
+\setmonofont{Courier New}
+\usepackage{indentfirst}
+\frenchspacing
+
+\renewcommand{\epsilon}{\ensuremath{\varepsilon}}
+\renewcommand{\phi}{\ensuremath{\varphi}}
+\renewcommand{\kappa}{\ensuremath{\varkappa}}
+\renewcommand{\le}{\ensuremath{\leqslant}}
+\renewcommand{\leq}{\ensuremath{\leqslant}}
+\renewcommand{\ge}{\ensuremath{\geqslant}}
+\renewcommand{\geq}{\ensuremath{\geqslant}}
+\renewcommand{\emptyset}{\varnothing}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+\usepackage{icomma}
+
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+{\hbox{$\mathsurround=0pt #1$}}{}}
+
+\usepackage{graphicx} 
+\graphicspath{{images/}{images2/}}  
+\setlength\fboxsep{3pt} 
+\setlength\fboxrule{1pt}
+\usepackage{wrapfig} 
+
+\usepackage{array,tabularx,tabulary,booktabs}
+\usepackage{longtable}  
+\usepackage{multirow} 
+
+\theoremstyle{plain} 
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{proposition}[theorem]{Утверждение}
+ 
+\theoremstyle{definition} 
+\newtheorem{corollary}{Следствие}[theorem]
+\newtheorem{problem}{Задача}[section]
+ 
+\theoremstyle{remark}
+\newtheorem*{nonum}{Решение}
+
+\usepackage{etoolbox}
+
+
+%%% Страница
+\usepackage{extsizes} % Возможность сделать 14-й шрифт
+\usepackage{geometry} % Простой способ задавать поля
+	\geometry{top=25mm}
+	\geometry{bottom=35mm}
+	\geometry{left=35mm}
+	\geometry{right=20mm}
+ %
+%\usepackage{fancyhdr} % Колонтитулы
+% 	\pagestyle{fancy}
+ 	%\renewcommand{\headrulewidth}{0pt}  % Толщина линейки, отчеркивающей верхний колонтитул
+% 	\lfoot{Нижний левый}
+% 	\rfoot{Нижний правый}
+% 	\rhead{Верхний правый}
+% 	\chead{Верхний в центре}
+% 	\lhead{Верхний левый}
+%	\cfoot{Нижний в центре} % По умолчанию здесь номер страницы
+
+\usepackage{setspace} % Интерлиньяж
+%\onehalfspacing % Интерлиньяж 1.5
+%\doublespacing % Интерлиньяж 2
+%\singlespacing % Интерлиньяж 1
+
+\usepackage{lastpage} % Узнать, сколько всего страниц в документе.
+
+\usepackage{soul} % Модификаторы начертания
+
+\usepackage{hyperref}
+\usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
+\hypersetup{				% Гиперссылки
+    unicode=true,           % русские буквы в раздела PDF
+    pdftitle={Заголовок},   % Заголовок
+    pdfauthor={Автор},      % Автор
+    pdfsubject={Тема},      % Тема
+    pdfcreator={Создатель}, % Создатель
+    pdfproducer={Производитель}, % Производитель
+    pdfkeywords={keyword1} {key2} {key3}, % Ключевые слова
+    colorlinks=true,       	% false: ссылки в рамках; true: цветные ссылки
+    linkcolor=red,          % внутренние ссылки
+    citecolor=black,        % на библиографию
+    filecolor=magenta,      % на файлы
+    urlcolor=cyan           % на URL
+}
+
+\usepackage{csquotes} % Еще инструменты для ссылок
+\parindent=1.1cm
+%\usepackage[style=authoryear,maxcitenames=2,backend=biber,sorting=nty]{biblatex}
+
+\usepackage{multicol} % Несколько колонок
+
+\usepackage{tikz} % Работа с графикой
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+
+\author{Марк Гончаров}
+\title{Закон Кюри-Вейсса}
+\date{\today}
+
+\begin{document} 
+
+\maketitle
+
+\section{Цель работы}
+
+Изучение температурной зависимости магнитной восприимчивости ферромагнетика выше точки Кюри.
+\section{В работе используется}
+Катушка самоиндукции, термостат, частотометр, вольтметр, LC-автогенератор, термопара.
+\section {Теоретическая справка к работе}
+Парамагнетик - вещество с магнитной восприимчивостью $\chi{} > 0$, при именении же температуры для таких веществ выполняется \textbf{закон Кюри}: \[ \chi{} \propto{} \frac{1}{T} \]
+\par При понижении температуры парамагнетик переходит в ферромагнетик - температуру называют \textbf{температурой Кюри - $\Theta{}_K$}
+\par Выше точки Кюри действует закон \textbf{Кюри-Вейсса} \[\chi{} \propto{} \frac{1}{T - \Theta{}_p}\]
+
+\par $\Theta{}_p$ - парамагнитная точка Кюри
+\newpage
+\section{Экспериментальная установка}
+
+\begin{figure}[h]
+\center{\includegraphics{1.PNG}}
+\caption{Установка}
+\label{fig:image}
+\end{figure}
+
+\begin{enumerate}
+\item {Катушка}
+\item {Стеклянный сосуд}
+\item {Термостатическая жидкость}
+\item {Ртутный термометр}
+\item {Термостат}
+\end{enumerate}
+\newline\par
+
+Введем $\mu{}$ - магнитная проницаемость, тогда для катушки $L \propto{} \mu{}$. Более того, при изменении индуктивности образца меняется период колебаний автогенератора: \[\tau = 2 \pi\sqrt{LC}\]
+где $C$ - ёмкость контура автогенератора, тогда разность самоиндукций катушки с образцом и без него:\[\chi{} \propto{} L - L_0 \propto{} \tau^2 - \tau_0^2\]
+\par Добавляем сюда закон Кюри-Вейса и получаем
+\[\frac{1}{\tau^2 - \tau_0^2} \propto{} T - \Theta_p\]
+
+\section{Выполнение задания}
+
+
+
+
+\end{document}
